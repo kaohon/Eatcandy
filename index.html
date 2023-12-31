@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eatcandy - おおいそがし ; ;</title>
+</head>
+<body>
+    <main id="main">
+        <span class="category" id="items_open">アイテム</span>
+        <span class="category" id="collection_open">コレクションツリー</span>
+        <span class="category" id="setting_open">設定</span>
+        <span class="category" id="candy">0 キャンディ</span>
+        <span class="category" id="stats_open">統計</span>
+        <span class="category" id="cards_open">カード</span>
+        <span class="category" id="bank_open">銀行</span>
+        <span class="category" id="pass_open">シーズンパス</span>
+    </main>
+    <main id="bank">
+        キャンディを貯金する 現在の貯蔵:<span id="candy_storage"></span><br>
+        <span id="in_storage">預金</span>
+        <span id="out_storage">出金</span>
+        <br>キャンディを預金することで、様々な特典を得ることが出来ます。
+        <br>レベル1(預金10000↑):預金したキャンディに利息が発生(10日おきに預金額の1.2倍)
+        <br>レベル2(預金100000↑):預金したキャンディに利息が発生(10日おきに預金額の1.4倍)
+        <br>レベル3(預金1000000↑):預金したキャンディに利息が発生(10日おきに預金額の1.6倍)
+        <br>レベル4(預金10000000↑):預金したキャンディに利息が発生(10日おきに預金額の1.7倍)
+        <br>レベル5(預金100000000↑):預金したキャンディに利息が発生(10日おきに預金額の1.8倍)
+        <br>レベル6(預金1000000000↑):預金したキャンディに利息が発生(10日おきに預金額の1.9倍)
+        <br>レベル7(預金10000000000↑):預金したキャンディに利息が発生(10日おきに預金額の2.0倍)
+    </main>
+    <main id="stats">
+        プレイ時間:<span id="elapsedsec"></span>秒<span id="elapsedmin"></span>分<span id="elapsedhour"></span>時間
+        <br>総生産キャンディ:
+        <br>
+    </main>
+    <main id="collection">
+        <span class="process" id="p1">process 1</span>
+        <span class="process" id="p2">process 2</span>
+        <span class="process" id="p3">process 3</span>
+        <span class="process" id="p4">process 4</span>
+        <span class="process" id="p5">process 5</span>
+        <span class="process" id="p6">process 6</span>
+        <!--雑魚-->
+        <!--01-->
+        <p id="block" class="box"><img src="img/candy.png">
+            </p><span id="block_tooltip" class="tooltip">キャンディ 所持済み
+                <br>何のひねりもないただのアイテム。<img src="img/candy.png"></span>
+        <!--//01-->
+        <!--02-->
+        <p id="stick" class="box"><img src="img/stick.png">
+            </p><span id="stick_tooltip" class="tooltip">キャンディスティック 10000キャンディ
+                <br>キャンディを加工し、研磨をしたもの。<img src="img/stick.png"></span>
+        <!--//02-->
+        <!--03-->
+        <p id="ecube" class="box"><img src="img/energycube.png">
+            </p><span id="ecube_tooltip" class="tooltip">エナジーキューブ 50000キャンディ
+                <br>キャンディ秒間生産量が+0.1
+                <br>キャンディを凝縮し、無限のエネルギーを放出できるようにしたアイテム。価値が非常に高い。<img src="img/energycube.png"></span>
+        <!--//03-->
+        <!--//雑魚-->
+
+        <!--キャンディワンド-->
+        <!--03-->
+        <p id="wand" class="box"><img src="img/wand.png">
+            </p><span id="wand_tooltip" class="tooltip">キャンディワンド 60000キャンディ
+                <br>キャンディ秒間生産量が+0.1
+                <br>無限のエネルギーで魔法攻撃をしていた武器。<img src="img/wand.png"></span>
+        <!--//03-->
+        <!--04-->
+        <p id="dcwand" class="box"><img src="img/doublecubewand.png">
+            </p><span id="dcwand_tooltip" class="tooltip">ダブルキューブ・キャンディワンド 110000キャンディ
+                <br>キャンディ秒間生産量が+0.2
+                <br>キャンディワンドが進化し、エナジーキューブが2つ搭載されていた武器。<img src="img/doublecubewand.png"></span>
+        <p id="bwand" class="box"><img src="img/wandboomerang.png">
+            </p><span id="bwand_tooltip" class="tooltip">キャンディワンド・ブーメラン 180000キャンディ
+                <br>キャンディ秒間生産量が+0.3
+                <br>ダブルキューブ・キャンディワンドが進化し、エナジーキューブが3つ搭載され、魔法攻撃と物理攻撃の両方を可能とした武器。<img src="img/wandboomerang.png"></span>
+        <!--//04-->
+        <!--05-->
+        <p id="twand" class="box"><img src="img/turbowand.png">
+            </p><span id="twand_tooltip" class="tooltip">超絶キャンディワンド改・ターボ 260000キャンディ
+                <br>キャンディ秒間生産量が+0.4
+                <br>キャンディワンドの頂点。<img src="img/turbowand.png"></span>
+        <!--//05-->
+        <!--06--> 
+        <p id="lastwand" class="box"><img src="img/worldlastturbowand.png">
+            </p><span id="lastwand_tooltip" class="tooltip">ワールドエンド・キャンディワンド 660000キャンディ
+                <br>キャンディ秒間生産量が+0.8
+                <br>もう一方の選択肢が解放される。
+                <br>世界の終わりに...<img src="img/worldlastturbowand.png"></span>
+        <!--//06-->
+
+        <!--キャンディソード-->
+        <!--03-->
+        <p id="sword" class="box"><img src="img/sword.png">
+            </p><span id="sword_tooltip" class="tooltip">キャンディソード 60000キャンディ
+                <br>キャンディ秒間生産量が+0.1
+                <br>無限のエネルギーで物理攻撃をしていた武器。<img src="img/sword.png"></span>
+        <!--//03-->
+        <!--04-->
+            <p id="dsword" class="box"><img src="img/dualsword.png">
+            </p><span id="dsword_tooltip" class="tooltip">デュアル・キャンディソード 120000キャンディ
+                <br>キャンディ秒間生産量が+0.2
+                <br>キャンディソードが進化し、二刀流となった武器。<img src="img/dualsword.png"></span>
+        <!--//04-->
+        <!--05-->
+        <p id="tsword" class="box"><img src="img/turbosword.png">
+            </p><span id="tsword_tooltip" class="tooltip">超絶キャンディソード改・ターボ 220000キャンディ
+                <br>キャンディ秒間生産量が+0.4
+                <br>キャンディソードの頂点。<img src="img/turbosword.png"></span>
+        <!--//05-->
+        <!--06-->
+        <p id="lastsword" class="box"><img src="img/worldlastturbosword.png">
+            </p><span id="lastsword_tooltip" class="tooltip">ワールドエンド・キャンディソード 860000キャンディ
+                <br>キャンディ秒間生産量が+1.6
+                <br>もう一方の選択肢が解放される。
+                <br>世界の終わりに...<img src="img/worldlastturbosword.png"></span>
+        <!--//06-->
+    </main>
+    <main id="cards">
+        カードを選択(3枚まで)
+            <br><img src="img/arcana_temp.png"><img src="img/arcana_temp.png"><img src="img/arcana_temp.png">
+        <p id="gradeup">
+            カテゴリ グレードアップ クールタイム Part1:10分 Part2:20分 Part3:30分<br>
+            <img src="img/arcana_1.png">
+            <img src="img/arcana_2.png">
+            <img src="img/arcana_3.png">
+            <br>I グレードアップ Part1 カードの効果が1.5倍されるが、逆効果の確率が15%
+            <br>II グレードアップ Part2 カードの効果が3倍されるが、逆効果の確率が33%
+            <br>III グレードアップ Part3 カードの効果が6倍されるが、逆効果の確率が66%
+        </p>
+        <p id="limitbreak">
+            カテゴリ 抑制解放 クールタイム Part1:10分 Part2:20分 Part3:30分<br>
+            <img src="img/arcana_4.png">
+            <img src="img/arcana_5.png">
+            <img src="img/arcana_6.png">
+            <br>IIII 抑制解放 Part1 キャンディの生産量が3分間1.5倍
+            <br>IIIII 抑制解放 Part2 キャンディの生産量が1分30秒間3倍
+            <br>IIIIII 抑制解放 Part3 キャンディの生産量が30秒間6倍
+        </p>
+        <p id="extension">
+            カテゴリ 効果時間延長 クールタイム Part1:なし Part2:2分30秒 Part3:5分<br>
+            <img src="img/arcana_7.png">
+            <img src="img/arcana_8.png">
+            <img src="img/arcana_9.png">
+            <br>IIIIIII 延長 Part1 全ての効果時間が1.25倍延長、しかしキャンディ生産量は0.75倍に
+            <br>IIIIIIII 延長 Part2 全ての効果時間が1.5倍延長、しかしキャンディ生産量は0.5倍に
+            <br>IIIIIIIII 延長 Part3 全ての効果時間が2倍延長、しかしキャンディ生産量は0.25倍に
+        </p>
+        <p id="drilling">
+            カテゴリ 錬成 クールタイム Part1:3分 Part2:6分 Part3:10分<br>
+            <img src="img/arcana_10.png">
+            <img src="img/arcana_11.png">
+            <img src="img/arcana_12.png">
+            <br>IIIIIIIIII 錬成 Part1 250キャンディを無から生成、しかしキャンディ生産量が1倍に
+            <br>IIIIIIIIIII 錬成 Part2 500キャンディを無から生成、しかしキャンディ生産量が0.75倍に
+            <br>IIIIIIIIIIII 錬成 Part3 1000キャンディを無から生成、しかしキャンディ生産量が0.5倍に
+        </p>
+    </main>
+    <main id="setting">
+        <button onclick="save()">保存</button>
+        <a href="#" id="link1" download="savedata.txt"><button onclick="download()">セーブデータ書き出し</button></a>
+        セーブデータ読み込み<input type="file" id="selfile">
+        <button onclick="reset()">リセット</button>
+        <!--<span id="alert">自動セーブしました。(30秒毎)</span>-->
+    </main>
+    <main id="items">
+        ランダムカードセット(3枚) 300000キャンディ (2セットまで)
+        <br>カード選択ボックス(1枚) 150000キャンディ (3個まで)
+        <br>コレクションツリー Part2 75000キャンディ (Part1コンプリートで無料)
+    </main>
+    <main id="pass">
+        プレミアムパスを購入:100000キャンディ
+        lv1:
+        lv2:
+        lv3:
+        lv4:
+        lv5:
+        lv6:
+        lv7:
+        lv8:
+        lv9:
+        lv10:
+        lv11:
+        lv12:
+        lv13:
+        lv14:
+        lv15:
+        ノーマルパス完了
+        lv16:
+        lv17:
+        lv18:
+        lv19:
+        lv20:
+        lv21:
+        lv22:
+        lv23:
+        lv24:
+        lv25:
+        lv26:
+        lv27:
+        lv28:
+        lv29:
+        lv30:
+        次シーズンプレミアムパスの権利獲得
+    </main>
+
+    <script src="bank.js"></script>
+    <script src="event.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
